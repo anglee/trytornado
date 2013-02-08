@@ -11,7 +11,7 @@ import wsgiref.handlers
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
         pycode = "', '. join([str(x * x) for x in range(10)])" 
-        self.render('index.html', code=pycode, result=eval(pycode))
+        self.render('index.html', code=pycode, result="")
     def post(self):
         pycode = self.get_argument('code')
         self.render('index.html', code=pycode, result=eval(pycode))
